@@ -1,0 +1,24 @@
+services:
+  - name: etcd
+    image: quay.io/coreos/etcd:v3.3
+    command:
+    - etcd
+    - -listen-client-urls
+    - http://0.0.0.0:2379
+    - -advertise-client-urls
+    - http://0.0.0.0:2379
+    capabilities:
+     - CAP_CHOWN
+     - CAP_SETUID
+     - CAP_SETGID
+     - CAP_DAC_OVERRIDE
+     - CAP_SYS_ADMIN
+     - CAP_MKNOD
+    net: host
+  - name: apiserver
+    image: linuxkit/apiserver:7ade2b4b8f092705cbd22ab4f9bb88cac35d2487-dirty
+  - name: controller-manager
+    image: linuxkit/controller-manager:da3047be822cc5e4aecbb2a48f9d6d1de51dbbc5-dirty
+  - name: scheduler
+    image: linuxkit/scheduler:d2772ed900dd11c21b68e4f1bb9a010538712a3c
+
