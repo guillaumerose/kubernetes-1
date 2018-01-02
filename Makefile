@@ -14,10 +14,10 @@ KUBE_FORMAT_ARGS := $(patsubst %,-format %,$(KUBE_FORMATS))
 .PHONY: all master node
 all: master node
 
-master: yml/kube.yml yml/$(KUBE_RUNTIME).yml yml/$(KUBE_RUNTIME)-master.yml yml/$(KUBE_NETWORK).yml yml/kube-master.yml
+master: yml/kube.yml yml/kube-master.yml
 	linuxkit $(LINUXKIT_ARGS) build -disable-content-trust $(LINUXKIT_BUILD_ARGS) -name kube-master $(KUBE_FORMAT_ARGS) $^
 
-node: yml/kube.yml yml/$(KUBE_RUNTIME).yml yml/$(KUBE_NETWORK).yml yml/kube-slave.yml
+node: yml/kube.yml yml/$(KUBE_RUNTIME).yml yml/kube-slave.yml
 	linuxkit $(LINUXKIT_ARGS) build -disable-content-trust $(LINUXKIT_BUILD_ARGS) -name kube-node $(KUBE_FORMAT_ARGS) $^
 
 yml/weave.yml: kube-weave.yaml

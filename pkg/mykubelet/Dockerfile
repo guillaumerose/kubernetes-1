@@ -1,4 +1,4 @@
-FROM linuxkit/kubelet:d581c755f04a8a4060e9947cabe737d6b70fdd1b
+FROM linuxkit/kubelet:11082f2f27278399856d2ec37b112c79bc68c5a6
 
 ENTRYPOINT ["/usr/bin/kubelet.sh"]
 
