@@ -16,6 +16,7 @@ config:
   - /var/lib/kubelet-plugins:/usr/libexec/kubernetes/kubelet-plugins:rshared,rbind
   - /var/lib/cni/conf:/etc/cni/net.d:rshared,rbind
   - /var/lib/cni/bin:/opt/cni/bin:rshared,rbind
+  - /var/config:/var/config
   mounts:
   - type: cgroup
     options:

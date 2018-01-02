@@ -1,5 +1,5 @@
 services:
   - name: kubelet
-    image: linuxkit/mykubelet:fdf0c3e517d4c1e640104a8eb5dc385364c587d1-dirty
+    image: linuxkit/mykubelet:c5210a93e4014c26e4bcceb835b36f5a30745499-dirty
   - name: kube-proxy
-    image: linuxkit/kube-proxy:d985308d96aa12db6020cdee20609fdd924d0f0f
+    image: linuxkit/kube-proxy:d985308d96aa12db6020cdee20609fdd924d0f0f-dirty

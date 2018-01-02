@@ -44,7 +44,8 @@ cat <<EOF >/var/lib/cni/conf/99-loopback.conf
 }
 EOF
 
-exec kubelet --kubeconfig=/kubernetes/kubelet.conf \
+
+exec kubelet --kubeconfig=/var/config/kubelet.conf \
     	      --allow-privileged=true \
     	      --cluster-dns=10.96.0.10 \
     	      --cluster-domain=cluster.local \
@@ -56,4 +57,4 @@ exec kubelet --kubeconfig=/kubernetes/kubelet.conf \
     	      --cni-bin-dir=/opt/cni/bin \
     	      --cadvisor-port=0 \
     	      --fail-swap-on=false \
-    	      --hostname-override 46316edb4192
+    	      --hostname-override node1

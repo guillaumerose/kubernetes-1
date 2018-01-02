@@ -11,11 +11,11 @@ services:
      - all
     net: host
   - name: apiserver
-    image: linuxkit/apiserver:0290a9addca287ab3bd132df7a177d51837115ad
+    image: linuxkit/apiserver:0290a9addca287ab3bd132df7a177d51837115ad-dirty
   - name: controller-manager
-    image: linuxkit/controller-manager:2c46e2abb7a932faf8b4ab279fe3f22cf6cd97f8
+    image: linuxkit/controller-manager:2c46e2abb7a932faf8b4ab279fe3f22cf6cd97f8-dirty
   - name: scheduler
-    image: linuxkit/scheduler:d2772ed900dd11c21b68e4f1bb9a010538712a3c
+    image: linuxkit/scheduler:d2772ed900dd11c21b68e4f1bb9a010538712a3c-dirty
 files:
   - path: /etc/kubelet.sh.conf
     contents: ""
